@@ -45,7 +45,6 @@ def check_guess():
     """
     data = request.get_json()
     guess = data["guess"]
-    #guess = request.json["guess"]
     board = session["board"]
     result = boggle_game.check_valid_word(board, guess)
     return jsonify(result=result)
