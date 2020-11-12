@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Game{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="d-flex justify-content-between">
+      <div id="highscore">Your highest score: {{session["highscore"]}}</div>
+      <div id="times-played">You have played {{session["num_of_times_played"]}} times</div>
+    </div>
+    <form action="/game" id="dimensions-form" class="mt-5">
+      <label for="dimensions">How big do you want the board to be? </label>
+      <input id="dimensions-input" name="dimensions" type="number" min="1">
+      <button id="dimensions-button" class="btn btn-primary" type="submit">
+        Submit
+      </button>
+    </form>
+  </div>
+{% endblock %}
